@@ -1,0 +1,58 @@
+name: github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create
+description: creates an azure servicebus namespace authorization rule (if it doesn't already exist)
+inputs:
+  subscriptionId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of azure subscription
+  loginId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of user, service principal, or app to login with
+  loginSecret:
+    string:
+      constraints: { minLength: 1 }
+      description: secret of user, service principal, or app to login with
+      isSecret: true
+  loginTenantId:
+    string:
+      constraints: { minLength: 1 }
+      description: tenant id of user, service principal, or app to login with
+  name:
+    string:
+      constraints: { minLength: 1 }
+      description: name for the authentication rule
+  namespace:
+    string:
+      constraints: { minLength: 1 }
+      description: name of servicebus namespace
+  rights:
+    string:
+      constraints: { minLength: 1 }
+      description: space separated rights (Listen, Send, or Manage ) for the authentication rule
+      default: Listen Send Manage
+  resourceGroup:
+    string:
+      constraints: { minLength: 1 }
+      description: resource group of the servicebus namespace
+  loginType:
+    string:
+      constraints: { enum: [user, sp]}
+      description: type of login; 'user' (default) or 'sp' for service principal
+      default: user
+version: 1.0.0
+run:
+  container:
+    image: { ref: 'opspecpkgs/azure.servicebus.namespace.authrule.create:1.0.0' }
+    cmd: [node, /index.js]
+    files: { /index.js }
+    envVars:
+      subscriptionId:
+      loginId:
+      loginSecret:
+      name:
+      namespace:
+      resourceGroup:
+      rights:
+      loginTenantId:
+      loginType:
