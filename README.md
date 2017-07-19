@@ -20,21 +20,20 @@ opctl run github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#VERS
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#VERSION }
-    inputs: 
-      subscriptionId:
-      loginId:
-      loginSecret:
-      loginTenantId:
-      name:
-      namespace:
-      resourceGroup:
-      rights:
-      # begin optional args
-      loginType:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#VERSION }
+  inputs: 
+    subscriptionId:
+    loginId:
+    loginSecret:
+    loginTenantId:
+    name:
+    namespace:
+    resourceGroup:
+    rights:
+    # begin optional args
+    loginType:
+    # end optional args
 ```
 
 # Support
