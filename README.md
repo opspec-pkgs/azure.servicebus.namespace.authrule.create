@@ -1,33 +1,35 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/azure.servicebus.namespace.authrule.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.servicebus.namespace.authrule.create)
 
+<img src="icon.svg" alt="icon" height="100px">
+
 # Problem statement
 
-creates an azure servicebus namespace authorization rule (if it doesn't
-already exist)
+creates an azure servicebus namespace authorization rule (if it doesn't already exist)
+
+# Format
+
+this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
 
 # Example usage
 
-> note: in examples, VERSION represents a version of the
-> azure.servicebus.namespace.authrule.create pkg
-
-## install
+## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#VERSION
+opctl pkg install github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#1.0.0
 ```
 
-## run
+## Run
 
 ```
-opctl run github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#VERSION
+opctl run github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#1.0.0
 ```
 
-## compose
+## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#VERSION }
-  inputs: 
+  pkg: { ref: github.com/opspec-pkgs/azure.servicebus.namespace.authrule.create#1.0.0 }
+  inputs:
     subscriptionId:
     loginId:
     loginSecret:
@@ -35,10 +37,9 @@ op:
     name:
     namespace:
     resourceGroup:
+    # params w/ default
     rights:
-    # begin optional args
     loginType:
-    # end optional args
 ```
 
 # Support
